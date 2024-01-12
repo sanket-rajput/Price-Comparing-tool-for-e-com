@@ -24,7 +24,11 @@
   
   const HeroCarousel = () => {
     return (
+<<<<<<< HEAD
       <div className="heroCarousel rounded" style={{ maxWidth: '500px', maxHeight: '500px' , borderRadius: '10px'}}>
+=======
+      <div className="heroCarousel" style={{ maxWidth: '500px', maxHeight: '500px', borderRadius: '8px' }}>
+>>>>>>> e51cafb (Second commit, ui ux)
         <Carousel
           showThumbs={false}
           autoPlay
@@ -33,21 +37,22 @@
           showArrows={false}
           showStatus={false}
         >
-                {heroImages.map((image, index) => (
-                    <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                          <Image 
-                            src={image.imgUrl}
-                            alt={image.alt}
-                            width={200}
-                            height={200}
-                            style={{ objectFit: 'cover' }}
-                            className="object-contain"
-                          />
-                    </div>
-                ))}
+          {heroImages.map((image, index) => (
+            <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Image
+                src={image.imgUrl}
+                alt={image.alt}
+                width={200}
+                height={200}
+                style={{ objectFit: 'cover', borderRadius: '8px' }} // Apply borderRadius to the Image component
+                className="object-contain"
+              />
+            </div>
+          ))}
         </Carousel>
       </div>
     );
+    
   };
   
   export default HeroCarousel;

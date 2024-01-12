@@ -1,42 +1,83 @@
 "use client"
-
 import { scrapeAndStoreProduct } from "@/lib/actions";
 import { FormEvent, useState } from "react";
 
+          const isValidProductURL = (url: string) => {
+            try {
+              const parsedURL = new URL(url);
+              const hostname = parsedURL.hostname;
+            
+              if (
+                hostname.includes('amazon.com') ||
+                hostname.includes('amazon.') ||
+                hostname.endsWith('amazon') ||
+                hostname.includes('amzn') ||
+                hostname.includes('flipkart.com') ||
+                hostname.includes('flipkart') ||
+                hostname.endsWith('flipkart')
+              ) {
+                console.log('valid url');
+                return true;
 
-
-const isValidAmazonProductURL = (url: string) => {
-    try {
-      const parsedURL = new URL(url);
-      const hostname = parsedURL.hostname;
-  
-      if(
-        hostname.includes('amazon.com') || 
-        hostname.includes ('amazon.') || 
-        hostname.endsWith('amazon')|| 
-        hostname.includes('amzn')|| 
-        hostname.includes('flipkart.com') || 
-        hostname.includes ('flipkart') || 
-        hostname.endsWith('flipkart')
-      ) {
-        return true;
-      }
-    } catch (error) {
-      return false;
-    }
-  
-    return false;
-  }
-
-
-
+              }
+            } catch (error) {
+              return false;
+            }
+          
+            return false;
+          };
+          
 
 const Searchbar = () => {
+        const [searchPrompt, setSearchPrompt] = useState('');
+        const [isLoading, setIsLoading] = useState(false);
 
-    const [searchPrompt, setSearchPrompt] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+        const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+          event.preventDefault();
+          const isValidLink = isValidProductURL(searchPrompt);
+        
+          if (!isValidLink) return alert("Please provide a valid Amazon/Flipkart's product link");
+        
+          try {
+            setIsLoading(true);
 
+            // Scrape the product page
+            const product = await scrapeAndStoreProduct(searchPrompt);
+            // Process the scraped product data as needed
+            console.log('Scraped product:', product);
+          } catch (error) {
+            console.log(error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+      
+      return (
+        <form className="flex flex-wrap" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={searchPrompt}
+              onChange={(e) => setSearchPrompt(e.target.value)}
+              placeholder="Enter product link"
+              className="searchbar-input"
+              style={{
+                border: '2px solid #a8a7a7', // Dark black 2px border
+                padding: '8px 16px', // Adjust padding as needed
+                paddingTop: '10px',
+              }}
+            />
+          <button
+            type="submit"
+            className="searchbar-btn"
+            disabled={searchPrompt === ''}
+          >
+            {isLoading ? 'Searching...' : 'Search'}
+          </button>
+        </form>
+      );
+};
 
+<<<<<<< HEAD
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
@@ -104,3 +145,6 @@ const Searchbar = () => {
 }
 
 export default Searchbar
+=======
+export default Searchbar;
+>>>>>>> e51cafb (Second commit, ui ux)

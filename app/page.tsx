@@ -34,10 +34,17 @@ const Home = () => {
           Explore, compare, and save effortlessly with our handpicked price comparisons. Your destination for unlocking the best deals, making shopping a breeze.
 
           </p>
+<<<<<<< HEAD
           
           <Searchbar/>
 
          
+=======
+          <div className="mt-8">
+            <Searchbar/>
+         </div>
+          
+>>>>>>> e51cafb (Second commit, ui ux)
         </div>
         <div style={{ borderRadius: '50px',
          padding: '50px' }}>
