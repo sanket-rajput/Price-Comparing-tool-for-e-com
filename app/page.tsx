@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Searchbar from "@/components/Searchbar"
-import HeroCarousel from '@/components/HeroCarousel'
 import HeroCarouselFull from '@/components/HeroCarouselFull'
+import Footer from '@/components/Footer'
 
 const Home = () => {
   return (
@@ -31,28 +31,41 @@ const Home = () => {
         </h1>
 
           <p className="mt-6">
-          Explore, compare, and save effortlessly with our handpicked price comparisons. Your destination for unlocking the best deals, making shopping a breeze.
+          Explore, compare, and save effortlessly with our handpicked price comparisons. <br/>Your destination for unlocking the best deals, making shopping a breeze.
 
           </p>
-<<<<<<< HEAD
-          
           <Searchbar/>
 
          
-=======
+
           <div className="mt-8">
+
+         
+          <div className="my-9">
             <Searchbar/>
          </div>
+         <blockquote className="mt-5 text-lg italic font-medium text-gray-600">
+            <p>
+              "Smart spending is about more than what you buy"
+            </p>
+            <cite className="block text-right mt-2 text-sm font-normal text-gray-500">
+              - Anonymous
+            </cite>
+          </blockquote>
+
           
->>>>>>> e51cafb (Second commit, ui ux)
         </div>
         <div style={{ borderRadius: '50px',
          padding: '50px' }}>
-        <HeroCarousel/>
+        <HeroCarouselFull/>
 
         </div>
       </div>
      
+        <HeroCarouselFull/> 
+        
+      </div>
+
     </section>
 
 
@@ -70,6 +83,8 @@ const Home = () => {
       ))}
     </div>
     </section>
+    
+    <Footer/> 
     
     
     </>

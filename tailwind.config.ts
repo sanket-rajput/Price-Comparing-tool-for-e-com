@@ -15,7 +15,7 @@ module.exports = {
         },
         secondary: "#282828",
         "gray-200": "#EAECF0",
-        "gray-300": "D0D5DD",
+        "gray-300": "#D0D5DD",
         "gray-500": "#667085",
         "gray-600": "#475467",
         "gray-700": "#344054",
@@ -37,7 +37,8 @@ module.exports = {
       },
       borderRadius: {
         10: "10px"
-      }
+      },
+      scrollbar: ['rounded', 'dark'], // Assuming you've installed the tailwind-scrollbar plugin
     },
   },
   plugins: [],

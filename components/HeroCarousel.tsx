@@ -24,11 +24,7 @@
   
   const HeroCarousel = () => {
     return (
-<<<<<<< HEAD
-      <div className="heroCarousel rounded" style={{ maxWidth: '500px', maxHeight: '500px' , borderRadius: '10px'}}>
-=======
       <div className="heroCarousel" style={{ maxWidth: '500px', maxHeight: '500px', borderRadius: '8px' }}>
->>>>>>> e51cafb (Second commit, ui ux)
         <Carousel
           showThumbs={false}
           autoPlay
@@ -50,6 +46,17 @@
             </div>
           ))}
         </Carousel>
+        <div style={{ position: 'absolute', top: '295px', left: '770px', transform: 'rotate(350deg)' }}>
+        <Image
+          src="/assets/images/arrow-leftpointing.png"
+          alt="arrow"
+          width={150}
+          height={150}
+        />
+        
+      </div>
+      
+       
       </div>
     );
     

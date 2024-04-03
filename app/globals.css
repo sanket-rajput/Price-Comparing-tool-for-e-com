@@ -150,6 +150,12 @@
   .searchbar-btn {
     @apply bg-gray-900 border border-gray-900 rounded-lg shadow-xs px-5 py-3 text-white text-base font-semibold hover:opacity-90 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40;
   }
+  ::-webkit-scrollbar-thumb {
+    background-color: red;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   
   .flat-long-shadow-text {
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
