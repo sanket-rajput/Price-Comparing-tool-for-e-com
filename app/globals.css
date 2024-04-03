@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: NeueHaasUnicaW1G,Helvetica,sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -149,4 +150,58 @@
   .searchbar-btn {
     @apply bg-gray-900 border border-gray-900 rounded-lg shadow-xs px-5 py-3 text-white text-base font-semibold hover:opacity-90 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40;
   }
+  
+  .flat-long-shadow-text {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+    font-family: 'Montserrat', sans-serif;
+    /* Add your desired fonts in order of preference */
+  }
+  
+  .awesome-font {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+
+
+
+  /* ShinyText.css */
+
+.shiny-text {
+  padding: 0px;background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px; /* Adjust font size as needed */
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 5px; /* Adjust letter spacing as needed */
+  text-transform: uppercase;
+  animation: shine 3s infinite linear;
+  
+
+
+
+  color: hsl(0, 0%, 28%);
 }
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 200px; /* Adjust the value based on your design */
+  }
+  100% {
+    background-position: 200px; /* Adjust the value based on your design */
+  }
+}
+
+/* Additional styles for the red text */
+.text-red-500 {
+  color: #ff0000; /* Adjust the color as needed */
+}
+
+}
+
+  
+

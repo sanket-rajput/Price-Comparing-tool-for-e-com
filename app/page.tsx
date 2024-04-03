@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import Searchbar from "@/components/Searchbar"
 import HeroCarousel from '@/components/HeroCarousel'
+import HeroCarouselFull from '@/components/HeroCarouselFull'
 
 const Home = () => {
   return (
     <>
-    <section className="px-6 md:px-20 py-24 ">
+    <section className="px-6 md:px-20 py-24 bg-cyan-500	 text-white ">
       <div className='flex max-xl:flex-col gap-16'>
         <div className='flex flex-col justify-center'>
 
@@ -21,24 +22,38 @@ const Home = () => {
           />
           </p>
 
-          <h1 className='head-text'>
+
+          <h1 className='head-text text-white '>
+          
             Unleash the power of
-            <span className="text-primary"> PriseWise</span>
-          </h1>
+          
+          <span className="text-red-500"> PriseWise</span>
+        </h1>
 
           <p className="mt-6">
           Explore, compare, and save effortlessly with our handpicked price comparisons. Your destination for unlocking the best deals, making shopping a breeze.
 
           </p>
+          
           <Searchbar/>
+
          
         </div>
-
+        <div style={{ borderRadius: '50px',
+         padding: '50px' }}>
         <HeroCarousel/>
+
+        </div>
       </div>
      
     </section>
 
+
+    <section className="bg-blue-500	 text-white ">
+
+    <HeroCarouselFull/>
+
+    </section>
 
     <section className="trending-section">
     <h2 className="section-text">Trending</h2>

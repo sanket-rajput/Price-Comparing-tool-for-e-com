@@ -59,24 +59,48 @@ const Searchbar = () => {
 
 
   return (
-    <form className="flex flex-wrap" onSubmit={handleSubmit}>
+    <form className="flex flex-wrap" onSubmit={handleSubmit}
+    
+    style={{
+    marginTop: '20px',}}>
+
+
     <input
     type="text"
     value={searchPrompt}
     onChange={(e) => setSearchPrompt(e.target.value)}
     placeholder="Enter product link"
-    className="searchbar-input"
+    className="searchbar-input "
+
+    style={{border: '1px solid #000',
+    paddingTop: '16px',
+    backgroundColor: 'rgba(255, 255, 255, 0.3)', // Adjust alpha value for transparency
+    backdropFilter: 'blur(10px)', // Adjust the blur radius
+    borderRadius: '5px',
+    color: '#333', // Adjust text color
+    transition: 'background-color 0.3s ease',
+    }}
+
     />
     
     <button 
         type="submit" 
-        className="searchbar-btn"
+        className="searchbar-btn focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
         disabled={searchPrompt === ''}
+
       >
         {isLoading ? 'Searching...' : 'Search'}
       </button>
     </form>
+    
+
+
+
   )
+
+
+
+  
 }
 
 export default Searchbar
